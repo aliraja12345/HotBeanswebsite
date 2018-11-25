@@ -1,0 +1,154 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>HotBeans-Apply</title>
+<link href="style.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+
+<body>
+<div class="hBox">
+<div class="div2_logo">
+  <a href="index.html"><img class="logo" src="Graphics/Logo..jpg" title="Home Page"></a>
+ </div>
+  <h1>APPLY</h1>
+</div> 
+
+<div class="nav"><ul class="Navigation_1">
+   <li class="Navigation"><a href="Index.html" title="Click to view this page">Home</a></li>
+   <li class="Navigation"><a href="Profiles.html" title="Click to view this page">Profiles</a></li>
+   <li class="Navigation"><a href="Careers.html" title="Click to view this page">Careers</a></li>
+   <li class="Navigation"><a href="Courses.html" title="Click to view this page">Courses</a></li>
+   <li class="Navigation"><a href="Apply.html" title="Click to view this page">Apply</a></li>
+</ul></div> <br><br>
+
+<div id="div_1ApplyPage"><hr class="mainHrLines"></hr></div>
+
+<div>
+ <form method="post" action="#" name="applyForm" onSubmit="ApplyFormValidation()">
+
+    <div class="imgBgMethod">
+    <label for="jobSelect" class="label_2">Job Title:</label>
+     <select required class="select_1" name="jobSelect">   
+       <option value="">Select a Job Title...</option>
+       <option value="1">Web Designer</option>
+       <option value="2">Front-End Web Developer</option>
+       <option value="3">Back-End Web Developer</option>
+     </select>
+    </div>
+
+
+    <div>
+     <label for="fName">First Name:</label>
+      <input type="text" class="inputText" name="fName" placeholder="i.e. Frank">
+    </div>
+      
+    <div>
+     <label for="sName">Last Name:</label>
+      <input type="text" class="inputText" name="lName" placeholder="i.e. Sampson">
+    </div>
+     
+    <div>
+     <label for="userEmail">Email:</label>
+      <input type="email" class="inputText" name="userEmail" placeholder="i.e. Frank_19@hotmail.co.uk">
+    </div>
+    
+    <div>
+       <label for="userNumber">Contact Number:</label>
+       <input type="text" class="inputText" name="userNumber" placeholder="i.e. 07845210935">
+    </div>
+    
+    <div>
+      <input type="file" id="real-file" hidden="hidden"/>
+      <label for="CVbutton">CV:</label>
+      <button type="button" id="custom-button" name="CVbutton" title="Click to browse your CV">CHOOSE A FILE</button>
+      <span id="custom-text">No file chosen yet.</span> 
+    </div>
+     
+    <div>
+      <input type="submit" value="Submit Application" class="submitButton" name="submitform" title="Click here to submit the application form"></input>
+    </div>   
+  </form>
+  
+  
+   
+<div id="div_2ApplyPage">
+   <p>Web Development Recruitment Agency based in Reading, Berkshire.<br>Hotbeans ©2018. All Rights Reversed</p>
+</div>
+      
+        
+        
+        
+  <script>
+  const realFileBtn = document.getElementById("real-file");
+  const customBtn = document.getElementById("custom-button");
+  const customTxt = document.getElementById("custom-text");
+
+  customBtn.addEventListener("click", function() {
+  realFileBtn.click();
+  });
+
+  realFileBtn.addEventListener("change", function() {
+  if (realFileBtn.value) {
+    customTxt.innerHTML = realFileBtn.value.match(
+      /[\/\\]([\w\d\s\.\-\(\)]+)$/
+    )[1];
+    } else {
+    customTxt.innerHTML = "No file chosen, yet.";
+    }
+  });
+  
+  
+  function ApplyFormValidation() {
+	  var userFName=document.forms["applyForm"]["fName"].value;
+	  var userLName=document.forms["applyForm"]["lName"].value;
+	  var usersEmailAdd=document.forms["applyForm"]["userEmail"].value;
+	  var usersContactNo=document.forms["applyForm"]["userNumber"].value;
+	  
+	  if (userFName==""||userLName==""||usersEmailAdd==""||usersContactNo=="")
+	   {
+		   alert("You are required to fill out all the fields!");
+	   }
+	  else if (userFName.length > 35)
+	   {
+		  alert("You cannot enter more than 35 characters in the First Name input field!");
+       }
+	  else if (/[^a-zA-Z\-]/.test(userFName)) 
+	  {
+		  alert("You can only enter letters and hyphens in the First Name input field!");
+	  }
+	  else if (userLName.length > 40)
+	  {
+		  alert("You cannot enter more than 40 characters in the Last Name input field!");  
+	  }
+	   else if (/[^a-zA-Z\-]/.test(userLName)) 
+	  {
+		  alert("You can only enter letters and hyphens in the Last Name input field!");
+	  }  
+	  else if (usersContactNo.length > 11)
+	  {
+		  alert("You cannot enter more than 11 digits in the Contact Number input field!");
+	  }
+	  else if (isNaN(usersContactNo))   
+	  {
+		  alert("You can only enter numbers in the Contact Number input field!");
+	  }
+	  else if (realFileBtn.value == "")
+	  {
+		  alert("Please browse and upload your CV!");
+	  }  
+	  else 
+	  {
+		 alert("Once you click 'OK', you cannot make changes to the application form!"); 
+	  }
+    } 
+   
+  </script>      
+    
+
+
+
+</body>
+</html>

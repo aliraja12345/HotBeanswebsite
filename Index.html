@@ -1,0 +1,64 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>HotBeans-Homepage</title>
+<link href="style.css" rel="stylesheet" type="text/css">
+<script type="text/javascript">
+
+    function rollover(h_image)
+    {
+        h_image.src = "Graphics/Homepage-Image2.jpg";
+    }
+	
+	
+	function mouseout (h_image) 
+	{
+		h_image.src="Graphics/Homepage-Image.jpg"
+	}
+
+</script>
+</head>
+
+<body>
+<div class="hBox">
+ <div class="div2_logo">
+  <a href="index.html"><img class="logo" src="Graphics/Logo..jpg" title="Home Page"></a>
+ </div>
+  <h1>HOTBEANS</h1>
+</div> 
+
+<div class="nav"><ul class="Navigation_1">
+   <li class="Navigation"><a href="Index.html" title="Click to view this page">Home</a></li>
+   <li class="Navigation"><a href="Profiles.html" title="Click to view this page">Profiles</a></li>
+   <li class="Navigation"><a href="Careers.html" title="Click to view this page">Careers</a></li>
+   <li class="Navigation"><a href="Courses.html" title="Click to view this page">Courses</a></li>
+   <li class="Navigation"><a href="Apply.html" title="Click to view this page">Apply</a></li>
+</ul></div> <br><br>
+
+<img class="hImage" src="Graphics/Homepage-Image.jpg" title="Web Development" onMouseOver="rollover(this)" onMouseOut="mouseout(this)"/>
+
+<div id="div1">
+   <h1 class="heading1">About Us</h1>
+   <p class="Paragraph1">Welcome to Hotbeans. This website includes a vast deal of information to assist you in browsing about our IT recruits, potential careers in web development and courses. We are here to facilitate you in gaining web development knowledge and finding a job in the IT industry. <br><br>
+
+The industry of IT is ever-growing with several vacancies required each day. Our agency is here to help and guide you in finding the job which perfectly suits you and your needs. <br><br>
+
+For the further expansion of Hotbeans, we are currently in the process of looking to take on board web developers. The job listings, acquainted with qualification requirements (and other employee specifications), can be browsed on our careers page. <br><br>
+
+If you feel that you may potentially lack in some of the requirements stated in any of job specifications, then you could brush up and improve on your skills set by accessing different courses that have been linked on our 'Courses' page. <br><br>
+
+To gain a little background on your potential co-employees, there is the provision of short bio's related to each current trainee web developer on the 'Profiles' page. <br><br>
+
+Enjoy browsing our website and we can't wait to assist in finding you your dream job. 
+   </p> <br>
+   <a href="Careers.html"><button class="button" title="Scroll back to top"><span>View Jobs</span></button></a>
+</div>
+
+<div id="div2">
+   <p>Web Development Recruitment Agency based in Reading, Berkshire.<br>Hotbeans ©2018. All Rights Reversed</p>
+</div>
+
+
+</body>
+</html>
